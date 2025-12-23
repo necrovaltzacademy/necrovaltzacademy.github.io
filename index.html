@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NECROVALTZ ACADEMY</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Font default tetep Times New Roman (buat judul & menu) */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #050505;
+            color: #a0a0a0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 50px 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .logo-img {
+            width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(128, 0, 128, 0.3));
+        }
+
+        .academy-name {
+            font-size: 2.5rem;
+            letter-spacing: 6px;
+            color: #f0f0f0;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+        }
+
+        .menu-container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .menu-item {
+            margin-bottom: 15px;
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+        }
+
+        .menu-btn {
+            width: 100%;
+            background: transparent;
+            color: #d1d1d1;
+            padding: 22px;
+            font-size: 1.1rem;
+            font-family: "Times New Roman", Times, serif; /* Tombol tetep klasik */
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-style: italic;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.4s;
+            letter-spacing: 3px;
+        }
+
+        .menu-btn:hover {
+            background: #111;
+            color: #ffffff;
+            padding-left: 30px;
+            border-left: 3px solid #6a0dad;
+        }
+
+        .plus-icon {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #080808;
+        }
+
+        /* --- INI BAGIAN YANG GW UBAH FONTNYA --- */
+        .content-text {
+            padding: 30px;
+            border-top: 1px solid #151515;
+            
+            /* Ganti font jadi Sans-Serif Bold (Montserrat) */
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 700; /* Bold tebal */
+            font-size: 0.95rem; /* Ukuran pas biar gak kegedean karena bold */
+            line-height: 1.6;
+            color: #e0e0e0; /* Warna lebih terang biar kebaca jelas */
+            text-align: justify;
+            letter-spacing: 0.5px; /* Biar lega dikit */
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 60px 0 20px 0;
+            font-size: 0.7rem;
+            color: #333;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .active-btn {
+            color: #ffffff !important;
+            background: #111 !important;
+            border-left: 3px solid #6a0dad;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-section">
+        <img src="logo.jpg" alt="Necrovaltz Logo" class="logo-img">
+        <h1 class="academy-name">NECROVALTZ ACADEMY</h1>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-item">
+            <button class="menu-btn" onclick="toggleContent('kemah', this)">
+                KEMAH <span class="plus-icon">▼</span>
+            </button>
+            <div id="kemah" class="content">
+                <div class="content-text">
+                    Kemah di Lembar Silvara bukan sekadar kegiatan menginap di alam terbuka. Ini adalah sebuah perjalanan transformasi di mana batas kemampuan diri akan diuji dan cakrawala berpikir kalian akan diperluas. Di bawah naungan langit Silvara, kalian akan diajak untuk meninggalkan zona nyaman dan menyatu dengan alam yang jujur.
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-btn" onclick="toggleContent('pos', this)">
+                POS <span class="plus-icon">▼</span>
+            </button>
+            <div id="pos" class="content">
+                <div class="content-text">
+                    Setiap jengkal Lembar Silvara menyimpan rahasia. Kalian akan bergerak dari satu pos ke pos lain yang memiliki tema unik—mulai dari uji ketangkasan, problem solving, hingga pos investigasi seperti yang sedang kalian hadapi sekarang. Setiap pos adalah gerbang. Kalian tidak bisa melangkah ke tahap berikutnya sebelum membuktikan bahwa tim kalian memiliki kualitas yang dibutuhkan.
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-btn" onclick="toggleContent('riddle', this)">
+                RIDDLE <span class="plus-icon">▼</span>
+            </button>
+            <div id="riddle" class="content">
+                <div class="content-text">
+                    Kali ini, riddle bukan sekadar pertanyaan tebak-tebakan, melainkan sebuah simulasi masalah nyata yang hanya bisa dipecahkan jika kalian jeli dalam menghubungkan fakta, logika, dan ilmu pengetahuan.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Established MMXXV &mdash; Necrovaltz Academy
+    </footer>
+
+    <script>
+        function toggleContent(id, btn) {
+            const content = document.getElementById(id);
+            const allContent = document.querySelectorAll('.content');
+            const allBtns = document.querySelectorAll('.menu-btn');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                btn.classList.remove('active-btn');
+            } else {
+                allContent.forEach(c => c.style.maxHeight = null);
+                allBtns.forEach(b => b.classList.remove('active-btn'));
+                
+                content.style.maxHeight = content.scrollHeight + "px";
+                btn.classList.add('active-btn');
+            }
+        }
+    </script>
+
+</body>
+</html>
